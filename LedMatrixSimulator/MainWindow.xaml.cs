@@ -27,7 +27,7 @@ namespace LedMatrixSimulator
             
         }
 
-        public void DrawMatrixFromConfig()
+        private void DrawMatrixFromConfig()
         {
             var _matrixHeight = Convert.ToInt16(matrixHeightTBox.Text.ToString());
             var _matrixWidth = Convert.ToInt16(matrixWidthTBox.Text.ToString());
@@ -68,15 +68,17 @@ namespace LedMatrixSimulator
             DrawMatrixFromConfig();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void testBtn_Click(object sender, RoutedEventArgs e)
         {
+            SetLed(Convert.ToInt16(rowTBox.Text.ToString()),
+                   Convert.ToInt16(colTBox.Text.ToString()),
+                   Color.FromRgb(Convert.ToByte(rTBox.Text.ToString()),
+                                 Convert.ToByte(gTBox.Text.ToString()),
+                                 Convert.ToByte(bTBox.Text.ToString())));
 
-            var ellipse = ellipseCollection.ElementAt(5);
-            ellipse.Fill = new SolidColorBrush(Color.FromRgb(255, 0, 0));
-            RedrawMatrix();
         }
 
-        public void RedrawMatrix()
+        private void RedrawMatrix()
         {
             var _matrixHeight = Convert.ToInt16(matrixHeightTBox.Text.ToString());
             var _matrixWidth = Convert.ToInt16(matrixWidthTBox.Text.ToString());
@@ -87,6 +89,25 @@ namespace LedMatrixSimulator
             {
                 myCanvas.Children.Add(ellipseCollection.ElementAt(i));
             }
+        }
+
+        public void SetLed(short line, short column, Color color)
+        {
+            if (line > Convert.ToInt16(matrixHeightTBox.Text.ToString()))
+            {
+                MessageBox.Show("Line exceeds the maximum height");
+                return;
+            }
+            if (column > Convert.ToInt16(matrixWidthTBox.Text.ToString()))
+            {
+                MessageBox.Show("Column exceeds the maximum width");
+                return;
+            }
+
+            var ellipse = ellipseCollection.ElementAt((line - 1) * Convert.ToInt16(matrixWidthTBox.Text.ToString()) + (column - 1));
+            ellipse.Fill = new SolidColorBrush(color);            
+            RedrawMatrix();
+
         }
     }
 }

@@ -14,13 +14,18 @@
                     <TextBox x:Name="matrixWidthTBox" HorizontalAlignment="Left" Height="23" Margin="47,30,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top" Width="33"/>
                     <Label x:Name="heightLbl" Content="Height" HorizontalAlignment="Left" Margin="-3,-1,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="widthLbl" Content="Width" HorizontalAlignment="Left" Margin="-4,29,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="drawMatrixBtn" Content="Draw Matrix" HorizontalAlignment="Left" Margin="102,108,0,0" VerticalAlignment="Top" Width="75" Click="drawMatrixBtn_Click"/>
-                    <Canvas x:Name="myCanvas" HorizontalAlignment="Left" Height="500" Margin="255,66,0,0" VerticalAlignment="Top" Width="500"/>
+                    <Button x:Name="drawMatrixBtn" Content="Draw Matrix" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Width="75" Click="drawMatrixBtn_Click"/>
+                    <Canvas x:Name="myCanvas" HorizontalAlignment="Left" Height="645" Margin="255,29,0,0" VerticalAlignment="Top" Width="1067"/>
                     <Label x:Name="dotSizeLbl" Content="Dot Size" HorizontalAlignment="Left" Margin="-4,54,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="dotSizeTBox" HorizontalAlignment="Left" Height="23" Margin="47,57,0,0" TextWrapping="Wrap" Text="20" VerticalAlignment="Top" Width="33"/>
                     <TextBox x:Name="dotSpacingTBox" HorizontalAlignment="Left" Height="23" Margin="48,85,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top" Width="33"/>
                     <Label x:Name="dotSpacingLbl" Content="Dot &#xD;&#xA;Spacing" HorizontalAlignment="Left" Margin="-4,72,0,0" VerticalAlignment="Top" Width="54"/>
-                    <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="81,153,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+                    <Button x:Name="testBtn" Content="TestMatrix" HorizontalAlignment="Left" Margin="10,293,0,0" VerticalAlignment="Top" Width="75" Click="testBtn_Click"/>
+                    <TextBox x:Name="rowTBox" HorizontalAlignment="Left" Height="23" Margin="10,151,0,0" TextWrapping="Wrap" Text="Row" VerticalAlignment="Top" Width="75"/>
+                    <TextBox x:Name="colTBox" HorizontalAlignment="Left" Height="23" Margin="10,179,0,0" TextWrapping="Wrap" Text="Column" VerticalAlignment="Top" Width="75"/>
+                    <TextBox x:Name="gTBox" HorizontalAlignment="Left" Height="23" Margin="10,235,0,0" TextWrapping="Wrap" Text="Green" VerticalAlignment="Top" Width="75"/>
+                    <TextBox x:Name="rTBox" HorizontalAlignment="Left" Height="23" Margin="10,207,0,0" TextWrapping="Wrap" Text="Red" VerticalAlignment="Top" Width="75"/>
+                    <TextBox x:Name="bTBox" HorizontalAlignment="Left" Height="23" Margin="10,265,0,0" TextWrapping="Wrap" Text="Blue" VerticalAlignment="Top" Width="75"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Matrix">
