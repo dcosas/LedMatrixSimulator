@@ -10,7 +10,7 @@
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="768" Margin="10,10,0,0" VerticalAlignment="Top" Width="1366">
             <TabItem Header="Configure Matrix" x:Name="test">
                 <Grid Background="#FFE5E5E5">
-                    <TextBox x:Name="matrixHeightTBox" HorizontalAlignment="Left" Height="23" Margin="47,2,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top" Width="33"/>
+                    <TextBox x:Name="matrixHeightTBox" x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="47,2,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top" Width="33"/>
                     <TextBox x:Name="matrixWidthTBox" HorizontalAlignment="Left" Height="23" Margin="47,30,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top" Width="33"/>
                     <Label x:Name="heightLbl" Content="Height" HorizontalAlignment="Left" Margin="-3,-1,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="widthLbl" Content="Width" HorizontalAlignment="Left" Margin="-4,29,0,0" VerticalAlignment="Top"/>
