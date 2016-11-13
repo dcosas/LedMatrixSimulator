@@ -9,7 +9,7 @@ using System.Windows.Shapes;
 
 namespace LedMatrixSimulator
 {
-    class MatrixDraw
+    class MatrixDraw : LedMatrixInterface
     {
         List<Ellipse> ellipseCollection = new List<Ellipse>();
         MainWindow myForm = Application.Current.Windows[0] as MainWindow;
@@ -24,7 +24,23 @@ namespace LedMatrixSimulator
 
         private MatrixDraw()
         {
+           
+        }
 
+        public short matrixWidth
+        {
+            get
+            {
+                return Convert.ToInt16(myForm.matrixWidthTBox.Text.ToString());
+            }
+        }
+
+        public short matrixHeight
+        {
+            get
+            {
+                return Convert.ToInt16(myForm.matrixHeightTBox.Text.ToString());
+            }
         }
 
         public void DrawMatrixFromConfig()
@@ -76,9 +92,9 @@ namespace LedMatrixSimulator
             }
         }
 
-        public void SetLed(short line, short column, Color color)
+        public void SetLed(Int16 row, Int16 column, Color color)
         {
-            if (line > Convert.ToInt16(myForm.matrixHeightTBox.Text.ToString()))
+            if (row > Convert.ToInt16(myForm.matrixHeightTBox.Text.ToString()))
             {
                 MessageBox.Show("Line exceeds the maximum height");
                 return;
@@ -89,7 +105,7 @@ namespace LedMatrixSimulator
                 return;
             }
 
-            var ellipse = ellipseCollection.ElementAt((line - 1) * Convert.ToInt16(myForm.matrixWidthTBox.Text.ToString()) + (column - 1));
+            var ellipse = ellipseCollection.ElementAt((row - 1) * Convert.ToInt16(myForm.matrixWidthTBox.Text.ToString()) + (column - 1));
             ellipse.Fill = new SolidColorBrush(color);
             RedrawMatrix();
 
